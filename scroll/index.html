@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面滚动</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            padding: 20px;
+            margin: 10px;
+            overflow: scroll;
+        }
+
+        #btn {
+            position: fixed;
+            top: 200px;
+            left: 30px;
+
+        }
+    </style>
+</head>
+<body style="height: 2000px">
+<div class="box" id="box">
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+</div>
+<button id="btn">回到顶部</button>
+<script>
+    window.onscroll = function () {
+        var docScrollTop = document.documentElement.scrollTop || document.body.scrollTop
+        var btn = document.getElementById('btn');
+        btn.onclick = scrollTop;
+
+        function scrollTop() {
+            if (docScrollTop){
+                document.documentElement.scrollTop=0;
+                document.body.scrollTop=0
+            }
+        }
+    }
+</script>
+</body>
+</html>
